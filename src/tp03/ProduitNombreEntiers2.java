@@ -11,34 +11,32 @@ import java.util.Scanner;
  *
  * @author formation_gep
  */
-public class PGCD {
+public class ProduitNombreEntiers2 {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
+        //CODE A REFACTORISER 
+          
+          // VARIABLES
+        int i ,n;
+        long produit;
         Scanner reader = new Scanner (System.in);
-        int x,y;
         
-        System.out.print("Saisir un nombre enrier : ");
-        x=reader.nextInt();
-        System.out.print("Saisir un nombre enrier : ");
-        y=reader.nextInt();
-        System.out.println("PGCD : "+ PGCD(x,y));
+        System.out.print("Entrez une valeur : ");
+        n=reader.nextInt();
+        produit = 1;
+        
+        for ( i=2 ;i<=n; i++){
+        produit =  produit * i ;
+        }
+        
+        System.out.println("le produit vaut : " + produit);
+        
         
     }
     
-    
-    public static int PGCD( int a, int b ){
-        while (a != b) {
-            if (a > b ){
-                a = a-b;
-            }
-             else  b = b-a ;
-             }
-        return a;
-    }
 }
-    
-
