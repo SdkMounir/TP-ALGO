@@ -13,26 +13,80 @@ import java.util.Calendar;
  */
 public class Personne {
 
+    /**
+     * @return the nom
+     */
+    public String getNom() {
+        return nom;
+    }
+
+    /**
+     * @param nom the nom to set
+     */
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    /**
+     * @return the anneeNaissance
+     */
+    public int getAnneeNaissance() {
+        return anneeNaissance;
+    }
+
+    /**
+     * @param anneeNaissance the anneeNaissance to set
+     */
+    public void setAnneeNaissance(int anneeNaissance) {
+        this.anneeNaissance = anneeNaissance;
+    }
+
+    /**
+     * @return the salaire
+     */
+    public int getSalaire() {
+        return salaire;
+    }
+
+    /**
+     * @param salaire the salaire to set
+     */
+    public void setSalaire(int salaire) {
+        this.salaire = salaire;
+    }
+
     private String nom;
     private int anneeNaissance;
     private int salaire;
-    
-    public Personne(){}
-    
-    public Personne(  String nom, int DateDeNaissance, int Salaire ){
-    this.nom = nom;
-    anneeNaissance = DateDeNaissance;
-    salaire = Salaire;
-        
+
+    public Personne(String nom, int anneeNaissance, int salaire) {
+        this.nom = nom;
+        this.anneeNaissance = anneeNaissance;
+        this.salaire = salaire;
+    }
+
+    public Personne() {
     }
     
-
+   
+    
+    
+    
+    
+    
+    
 public  int calculAge(){
     
     Calendar c = Calendar.getInstance();
     int year = c.get(Calendar.YEAR);
-    return year - anneeNaissance;
+    return year - getAnneeNaissance();
 }
+
+ public  void Affiche(){
+     System.out.printf("%s Agé de %d ans gagne %d par an \n", getNom(), calculAge(), getSalaire());
+     
+     
+     }
 
     
     /**
