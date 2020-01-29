@@ -27,6 +27,36 @@ public class Test {
         
         P2.Affiche();
         
+        
+        // Calcule de la surface avec tableau du Cercle et de Carré.
+        /*
+        Figure2D[] tab = { new Carré(0,0,10),
+                           new Cercle (15,10,10)
+                         };
+        double surfTotale=0;
+        
+        for (int i=0; i < tab.length ; i++){
+            surfTotale += tab[i].calcSurface();
+        }
+        
+        System.out.printf( "Surface totale : %5.2f\n" , surfTotale);
+        */
+        
+        
+        // Autre méthode (Polymorphisme)
+         
+        Figure2D[] tab = new Figure2D[2];
+        tab[0] = new Carré(0,0,10);
+        tab[1] = new Cercle(15,10,10);
+        
+        double surfTotale=0;
+        for (int i=0;  i<tab.length; i++){
+            surfTotale = surfTotale + tab[i].calcSurface();
+        }
+                    
+        System.out.printf( "Surface totale : %5.2f\n" , surfTotale);
+
+        }
     }
     
 }
